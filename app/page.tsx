@@ -1,6 +1,6 @@
 'use client'
 import Card from "@/components/home/Card";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ProductData } from "../components/common/types";
 import Navbar from "@/components/common/Navbar";
 
@@ -49,12 +49,14 @@ export default function Home() {
 
   return (
     <>
-      <Navbar onSearch={handleSearch} />
-      <main className="container mx-auto flex items-start flex-wrap justify-start mt-[100px]">
-        {filteredData && filteredData?.map((data: ProductData, index) => (
-          <Card key={index} data={data} />
-        ))}
-      </main>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Navbar onSearch={handleSearch} />
+        <main className="container mx-auto flex items-start flex-wrap justify-start mt-[100px]">
+          {filteredData && filteredData?.map((data: ProductData, index) => (
+            <Card key={index} data={data} />
+          ))}
+        </main>
+      </Suspense>
     </>
   )
 }

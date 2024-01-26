@@ -1,3 +1,5 @@
+'use client'
+
 export interface ProductData {
     id: number;
     category: string;
