@@ -1,8 +1,11 @@
+import Navbar from '@/components/common/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter,Playfair_Display,Montserrat } from 'next/font/google'
+import StoreProvider from './StoreProvider'
 
 const inter = Inter({ subsets: ['latin'] })
+const MontserratFont = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${MontserratFont.className} px-[140px] pt-11`}>
+        <StoreProvider>
+        {children}
+        </StoreProvider>
+        </body>
     </html>
   )
 }

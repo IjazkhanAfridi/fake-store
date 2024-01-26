@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background-color:#FFFCFA
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +22,16 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background-color)
+}
+
+.playfiar-dispay-font {
+  font-family:  'Playfair Display', serif;
+}
+
+.card-box-shadow{
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), -9px -5px 24px 0px rgba(0, 0, 0, 0.10);
+}
+.cart-box-shadow{
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 8px 13px 34px 0px rgba(0, 0, 0, 0.10);
 }
